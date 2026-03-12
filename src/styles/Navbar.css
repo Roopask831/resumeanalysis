@@ -1,0 +1,58 @@
+/* ============================================================
+   NAVBAR STYLES
+   ============================================================ */
+
+.navbar {
+  position: sticky;    /* sticks to top while scrolling */
+  top: 0;
+  z-index: 100;        /* sits above all other content */
+  background: rgba(8, 9, 13, 0.82);
+  backdrop-filter: blur(20px);   /* frosted glass effect */
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar__logo {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animated green dot next to logo */
+.navbar__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  animation: blink 2s infinite;
+}
+
+/* "AI-Powered ✦" badge on the right */
+.navbar__badge {
+  background: var(--accentDim);
+  border: 1px solid rgba(232, 255, 107, 0.27);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

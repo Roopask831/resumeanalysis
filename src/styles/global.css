@@ -1,0 +1,93 @@
+/* ============================================================
+   GLOBAL STYLES — applies to the entire app
+   Think of this as the "foundation" stylesheet.
+   ============================================================ */
+
+/* --- CSS CUSTOM PROPERTIES (variables) ---
+   Defined on :root so every component can access them.
+   Change a color here → it updates everywhere automatically. */
+:root {
+  --bg:         #030202;
+  --surface:    #0e0f15;
+  --card:       #13141c;
+  --border:     #1e2030;
+  --border2:    #2a2d45;
+
+  --accent:     #e8ff6b;   /* primary yellow-green highlight */
+  --accent2:    #c8e637;
+  --accentDim:  #3a4010;   /* muted version of accent for backgrounds */
+
+  --green:      #4ade80;
+  --greenDim:   #0f2d1a;
+  --red:        #f87171;
+  --redDim:     #2d0f0f;
+  --amber:      #fbbf24;
+  --amberDim:   #2d1f0a;
+  --blue:       #60a5fa;
+
+  --text:       #e8eaf0;
+  --muted:      #5a5f7a;
+  --dim:        #9499b8;
+
+  --radius:     14px;
+  --font-head:  'Syne', sans-serif;
+  --font-body:  'Instrument Sans', sans-serif;
+}
+
+/* --- RESET ---
+   Removes default browser margins/padding and makes
+   box-sizing consistent (padding doesn't add to width). */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth anchor scrolling */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* --- KEYFRAME ANIMATIONS ---
+   Defined globally so any component can reference them. */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position:  200% center; }
+}
+
+/* --- AMBIENT BACKGROUND GLOW ---
+   A subtle radial gradient overlay on the body for depth.
+   pointer-events: none means it doesn't block clicks. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 70% -10%,  rgba(232,255,107,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at -10% 80%, rgba(74,222,128,0.04)  0%, transparent 60%);
+  pointer-events: none;
+}
