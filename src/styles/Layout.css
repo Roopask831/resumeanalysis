@@ -1,0 +1,115 @@
+/* ============================================================
+   HOW IT WORKS + FOOTER STYLES
+   ============================================================ */
+
+/* Shared page wrapper — centers content and adds horizontal padding */
+.page-wrap {
+  position: relative;
+  z-index: 1;           /* sits above the body::before background */
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- HOW IT WORKS ---- */
+.how-section {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 56px;
+}
+
+.how-section__title {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.how-step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.how-step__num {
+  font-family: var(--font-head);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--border2);   /* very dim number for aesthetic */
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+
+.how-step__title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.how-step__desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--border);
+  padding: 32px 0 48px;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__logo {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__logo-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.footer__note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer__note a {
+  color: var(--dim);
+  text-decoration: none;
+}
+
+.footer__note a:hover {
+  color: var(--text);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 700px) {
+  .how-steps { grid-template-columns: 1fr; }
+  .footer__inner { flex-direction: column; gap: 12px; text-align: center; }
+}

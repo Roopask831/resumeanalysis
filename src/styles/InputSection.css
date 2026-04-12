@@ -1,0 +1,185 @@
+/* ============================================================
+   INPUT SECTION STYLES
+   ============================================================ */
+
+.input-section {
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+/* Side-by-side resume + job description textareas */
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.input-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+/* Highlight card when any input inside it is focused */
+.input-card:focus-within {
+  border-color: var(--border2);
+}
+
+/* Small label above each textarea */
+.input-card__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* Colored dot in each label */
+.input-card__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.dot--purple { background: #a78bfa; }
+.dot--green  { background: var(--green); }
+.dot--blue   { background: var(--blue); }
+
+/* The actual textarea element */
+.input-card__textarea {
+  width: 100%;
+  min-height: 240px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.7;
+  padding: 14px;
+  resize: vertical; /* user can resize vertically only */
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-card__textarea::placeholder {
+  color: var(--muted);
+}
+
+.input-card__textarea:focus {
+  border-color: var(--border2);
+}
+
+/* Character count shown below each textarea */
+.input-card__count {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 6px;
+}
+
+/* --- API KEY CARD --- */
+.api-key-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.api-key-note {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: 4px;
+}
+
+.api-key-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-top: 8px;
+}
+
+.api-key-input:focus {
+  border-color: var(--border2);
+}
+
+/* --- ANALYZE BUTTON --- */
+.analyze-btn {
+  width: 100%;
+  padding: 18px;
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  color: #08090d; /* dark text on light button */
+  font-family: var(--font-head);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.analyze-btn:hover {
+  transform: translateY(-1px);
+  background: var(--accent2);
+}
+
+.analyze-btn:active {
+  transform: translateY(0);
+}
+
+.analyze-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading spinner inside button */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(0, 0, 0, 0.3);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Error message below button */
+.error-msg {
+  background: var(--redDim);
+  border: 1px solid rgba(248, 113, 113, 0.27);
+  border-radius: 10px;
+  color: var(--red);
+  padding: 12px 16px;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 700px) {
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+}

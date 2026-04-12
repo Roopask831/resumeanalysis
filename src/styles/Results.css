@@ -1,0 +1,297 @@
+/* ============================================================
+   RESULTS SECTION STYLES
+   ============================================================ */
+
+.results {
+  margin-top: 48px;
+  animation: fadeUp 0.5s ease both;
+}
+
+/* Header row: "Analysis Results" title + reset button */
+.results__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.results__title {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.results__title span {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* "New Analysis" button */
+.reset-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: var(--dim);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-body);
+}
+
+.reset-btn:hover {
+  border-color: var(--border2);
+  color: var(--text);
+}
+
+/* ---- SCORE CARDS ---- */
+/* Three equal columns for ATS / Keyword / Readability */
+.scores-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.score-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Colored top bar — each card variant has a different gradient */
+.score-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.score-card--ats::before  { background: linear-gradient(90deg, var(--accent), var(--green)); }
+.score-card--kw::before   { background: linear-gradient(90deg, var(--blue), #a78bfa); }
+.score-card--read::before { background: linear-gradient(90deg, var(--amber), var(--red)); }
+
+/* SVG ring container */
+.ring-wrap {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 14px;
+}
+
+/* The number shown in the center of each ring */
+.ring-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.score-card__name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.score-card__desc {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+/* ---- SUMMARY CARD ---- */
+.summary-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); /* accent left stripe */
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.summary-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--accentDim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0; /* don't shrink even if text is long */
+}
+
+.summary-card__label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.summary-card__text {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--dim);
+}
+
+/* ---- KEYWORDS ---- */
+.kw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.kw-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.kw-card__title {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Count badge (e.g. "8") */
+.kw-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+.kw-badge--green { background: var(--greenDim); color: var(--green); }
+.kw-badge--red   { background: var(--redDim);   color: var(--red); }
+
+.kw-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+/* Individual keyword pill */
+.kw-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.kw-tag--found {
+  background: var(--greenDim);
+  color: var(--green);
+  border: 1px solid rgba(74, 222, 128, 0.13);
+}
+.kw-tag--missing {
+  background: var(--redDim);
+  color: var(--red);
+  border: 1px solid rgba(248, 113, 113, 0.13);
+}
+
+/* ---- CHANGES LIST ---- */
+.changes-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.changes-card__title {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 22px;
+  letter-spacing: -0.02em;
+}
+
+.change-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.change-item:last-child  { border-bottom: none; padding-bottom: 0; }
+.change-item:first-child { padding-top: 0; }
+
+/* Icon box on the left */
+.change-item__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.change-item__icon--critical   { background: var(--redDim);   color: var(--red); }
+.change-item__icon--important  { background: var(--amberDim); color: var(--amber); }
+.change-item__icon--suggestion { background: var(--accentDim); color: var(--accent); }
+
+.change-item__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+.change-item__name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Severity label pill */
+.change-item__pill {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 2px 9px;
+  border-radius: 100px;
+}
+.change-item__pill--critical   { background: var(--redDim);   color: var(--red); }
+.change-item__pill--important  { background: var(--amberDim); color: var(--amber); }
+.change-item__pill--suggestion { background: var(--accentDim); color: var(--accent); }
+
+.change-item__detail {
+  font-size: 13.5px;
+  color: var(--dim);
+  line-height: 1.65;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 700px) {
+  .scores-grid { grid-template-columns: 1fr; }
+  .kw-grid     { grid-template-columns: 1fr; }
+  .results__header { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
