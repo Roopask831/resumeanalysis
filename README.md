@@ -41,7 +41,7 @@ resume-optimizer/
 │   │   └── HowItWorks.jsx  ← 3-step explainer section
 │   │
 │   ├── services/
-│   │   └── claudeApi.js    ← All Claude API call logic lives here
+│   │   └── claudeApi.js    ← All  call logic lives here
 │   │
 │   └── styles/
 │       ├── global.css      ← CSS variables, resets, animations
