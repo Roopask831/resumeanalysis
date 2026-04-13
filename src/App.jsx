@@ -152,11 +152,7 @@ function App() {
               <span className="footer__logo-dot" />
             </div>
             <div className="footer__note">
-              Powered by{' '}
-              <a href="https://anthropic.com" target="_blank" rel="noreferrer">
-                Claude AI
-              </a>{' '}
-              by Anthropic. Your data is never stored.
+              Your data is never stored.
             </div>
           </div>
         </footer>
