@@ -22,10 +22,6 @@ function Hero() {
       {/* ---- HERO TEXT ---- */}
       <section className="hero" id="top">
 
-        <div className="hero__badge">
-          <span>✦</span> Powered by Claude AI
-        </div>
-
         {/* clamp() in CSS makes the font scale fluidly with viewport */}
         <h1 className="hero__title">
           Beat the ATS.<br />
